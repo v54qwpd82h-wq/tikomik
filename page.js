@@ -3,6 +3,7 @@ import React from 'react';
 export default function Home() {
   const whatsappNumber = "19043181164";
   
+  // Fonksyon pou kreye lyen WhatsApp la
   const getWhatsAppLink = (planName, price) => {
     const message = `Bonjour G.L Tikomik Studio, mwen ta renmen peye pou plan ${planName} lan ki koute ${price}. Mwen pare pou m valide peman an.`;
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -50,3 +51,35 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition w-full block text-center"
             >
+              Confirmer Paiement
+            </a>
+          </div>
+
+          {/* Plan Illimité */}
+          <div className="bg-gradient-to-b from-premium-blue to-neon-purple p-1 rounded-2xl">
+            <div className="bg-modern-black p-8 rounded-xl h-full flex flex-col">
+              <h3 className="text-2xl font-bold mb-2">PLAN ILLIMITÉ</h3>
+              <p className="text-4xl font-extrabold text-neon-purple mb-4">50 USD <span className="text-sm text-gray-400">≈ 5000 HTG</span></p>
+              <ul className="text-left space-y-3 mb-8 flex-1">
+                <li>🔥 Vidéos illimitées</li>
+                <li>🔥 HD export & Toutes scènes</li>
+                <li>🔥 Toutes voix & Personnages premium</li>
+                <li>🔥 Fonctionnalités AI complètes</li>
+              </ul>
+              <a 
+                href={getWhatsAppLink("ILLIMITÉ", "50 USD")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-neon-purple hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-[0_0_15px_rgba(138,43,226,0.5)] w-full block text-center"
+              >
+                Confirmer Paiement
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </main>
+      
+    </div>
+  );
+}
